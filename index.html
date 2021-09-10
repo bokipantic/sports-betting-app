@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Kladionica</title>
+	<title>Kladite se | Kladionica</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
 		integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
 </head>
-<body onload="proveriToken(); ucitaj();">
-	<?php include "include/navbar.php"; ?>
 
+<body onload="proveriToken(); ucitaj();">
+	<nav class="navbar navbar-default navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">Kladionica</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Kladjenje</a></li>
+					<li><a href="tiketi.html">Tiketi</a></li>
+					<li><a href="utakmice.html">Utakmice</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false"><span id="username"></span> <span class="caret"></span></a>
+						<ul class="dropdown-menu" id="right-navbar-drop">
+							<li><a href="profil.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+									Profil</a></li>
+							<li role="separator" class="divider"></li>
+							<li style="cursor: pointer;"><a onclick="logout();"><span class="glyphicon glyphicon-eject"
+										aria-hidden="true"></span> Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -19,7 +53,7 @@
 						<div class="jumbotron">
 							<h1>Kladionica</h1>
 							<p>Uplatite tiket</p>
-							<p><a class="btn btn-primary btn-lg" href="tiketi.php" role="button">Pogledaj sve tikete</a>
+							<p><a class="btn btn-primary btn-lg" href="tiketi.html" role="button">Pogledaj sve tikete</a>
 							</p>
 						</div>
 					</div>
@@ -40,7 +74,9 @@
 									</thead>
 									<tbody></tbody>
 								</table>
-								<b><div id="ukupna_kvota"></div></b>
+								<b>
+									<div id="ukupna_kvota"></div>
+								</b>
 								<br>
 								<button type="button" class="btn btn-primary" data-toggle="modal"
 									data-target="#myModal">Uplati tiket</button>
@@ -100,4 +136,5 @@
 	<script src="index.js"></script>
 	<script src="funkcije.js"></script>
 </body>
+
 </html>
